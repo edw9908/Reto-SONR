@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-6 mb-4" *ngFor="let question of faq">
+            <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
+                <ngb-panel title="{{question.name}}">
+                    <ng-template ngbPanelContent>
+                        {{question.answer}}
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+    </div>
+</div>

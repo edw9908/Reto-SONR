@@ -1,0 +1,17 @@
+<div class="container">
+    <div *ngIf="isSearching">
+        <h1>Busqueda</h1>
+        <p>Palabra buscada: {{textSearch}}</p>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let item of products">
+            <div class="card mb-5 text-center" style="height: 450px;">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <img class="card-img-top" src="{{item.image}}">
+                </div>
+                <a class="btn btn-primary" [routerLink]="['/detail/', item.id]">Ver mas</a>
+            </div>
+        </div>
+    </div>
+</div>

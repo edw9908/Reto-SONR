@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Carrito</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Imagen</th>
+          <th scope="col">Producto</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Subtotal</th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let el of carrito">
+                <td>
+                    <img src="{{el.image}}" class="mr-2" style="width: 20px">
+                </td>
+                <td>{{ el.name }}</td>
+                <td>{{ el.price | number : '1.2-2' }}</td>
+                <td>{{ el.quantity }}</td>
+                <td>{{ el.quantity * el.price | number : '1.2-2' }}</td>
+                <td><a (click)="removeProduct(el.id)"><fa-icon [icon]="faTrashAlt"></fa-icon></a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

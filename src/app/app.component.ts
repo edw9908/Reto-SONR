@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-app';
+  carrito = [];
+
+  constructor(){
+    this.loadStorage();
+  }
+
+  loadStorage(){
+    localStorage.setItem("carrito", JSON.stringify(this.carrito));
+  }
+  /*
+  setStorage(){
+    let tmp = JSON.parse(localStorage.getItem("carrito"));
+    tmp.push(4)
+    localStorage.setItem("carrito", tmp)
+    //localStorage.setItem("carrito", )
+  }
+  */
 }
